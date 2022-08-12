@@ -1,0 +1,6 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^7.0",
+        "zendesk/zendesk_api_client_php": "^2.2"
+    }
+}

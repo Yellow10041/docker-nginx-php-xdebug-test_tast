@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  app:
+    build: ./images/nginx
+    ports:
+      - "80:8000"
+    volumes: &appvolumes
+      - appdata:/var/www/html
+      - sockdata:/sock
+      - ./src:/var/www/html:cached
+
+  php-fpm:
+    build: ./images/php
+    volumes: *appvolumes
+
+volumes:
+  appdata:
+  sockdata:
